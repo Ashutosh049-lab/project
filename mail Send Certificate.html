@@ -1,0 +1,68 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet"href="Generate Certification.css">
+    <title>Certification Generator</title>
+</head>
+<body>
+    <h1>Certification Generator</h1>
+    <form>   
+            <h2>Send Certification</h2>
+        </div>
+        <div>
+            <label for="email">Enter your email:</label>
+            <input type="email" id="email">
+        </div>
+        <div>
+            <label for="password">Enter your password:</label>
+            <input type="password" id="password">
+        </div>
+        
+        <div>
+            <button type="button" onclick="sendMail()">Send Mail</button>
+        </div>
+    </form>
+</body>
+</html>
+ -->
+
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generate Certificate</title>
+     <link rel="stylesheet" href="Generate Certification.css">
+</head>
+<body class="certificategenerator">
+    <h1>Generate Certificate</h1>
+    <form class="form1" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <h2>Create Certificate </h2>
+        <div class="file-upload">
+            <div id="label1">
+                {{ form.template.label_tag }}
+                {{ form.template }}
+            </div>
+            <div id="label1">
+                {{ form.csvfile.label_tag }}
+                {{ form.csvfile }}
+            </div>
+        </div>
+        <h3>Enter Sender Email Details</h3>
+        <div class="emailpart">     
+            <div id="label2">
+                {{ form.sender_email.label_tag }}
+                {{ form.sender_email }}
+            </div>
+            <div id="label3">
+                {{ form.sender_password.label_tag }}
+                {{ form.sender_password }}
+            </div>
+        </div>
+        <button id="button1" type="submit">Generate and Send Certificate</button>
+    </form>
+</body>
+</html> 
